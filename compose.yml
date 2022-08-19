@@ -1,0 +1,16 @@
+---
+version: '3'
+volumes:
+  apereo_cas:
+services:
+  vault:
+    image: docker.io/library/vault
+    cap_add:
+      - IPC_LOCK
+    ports:
+      - 8200:8200
+      - 1234:1234
+    volumes:
+      - vault_config:/var/lib/vault
+    depends_on:
+      - "postgres"

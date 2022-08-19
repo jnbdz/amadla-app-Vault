@@ -1,0 +1,24 @@
+[ req ]
+ default_bits       = 4096
+ default_md         = sha256
+ prompt             = no
+ encrypt_key        = no
+ distinguished_name = vault_server
+# vault_ca
+ [ vault_ca ]
+ countryName            = "{{ vault_cert_country }}"
+ stateOrProvinceName    = "{{ vault_cert_state }}"
+ localityName           = "{{ vault_cert_city }}"
+ organizationName       = "{{ vault_cert_org_name }}"
+ organizationalUnitName = "{{ vault_cert_org_unit_name }}"
+ commonName             = "{{ vault_cert_common_name }}"
+ emailAddress           = "{{ vault_cert_email }}"
+# vault_server
+ [ vault_server ]
+ countryName            = "{{ vault_cert_country }}"
+ stateOrProvinceName    = "{{ vault_cert_state }}"
+ localityName           = "{{ vault_cert_city }}"
+ organizationName       = "{{ vault_cert_org_name }}"
+ organizationalUnitName = "{{ vault_cert_org_unit_name }}"
+ commonName             = "{{ vault_cert_common_name }}"
+ emailAddress           = "{{ vault_cert_email }}"
