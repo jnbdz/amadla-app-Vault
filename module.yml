@@ -1,0 +1,30 @@
+---
+version: 1
+module:
+  description: Vault - Secret tool.
+  authors:
+    - Jean-Nicolas Boulay (JN) <https://jean-nicolas.name>
+  category: Application
+  tags:
+    - keys
+    - security
+    - password
+    - secrets
+    - storage
+  configuration:
+    network:
+      internal:
+        ports:
+          - protocol: tcp
+            internal: 8080
+            external: 8080
+      private:
+        entries:
+          - location: /vault
+            ports:
+              - protocol: tcp
+                internal: 8200
+                external: 80
+              - protocol: tcp
+                internal: 8200
+                external: 443
